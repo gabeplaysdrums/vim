@@ -1,15 +1,8 @@
 set nocompatible
 
 " tab indent settings
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set autoindent
-
-" php editing
-if has("autocmd")
-  augroup phpfiles
-    autocmd BufRead,BufNewFile *.php,*.module,*.theme,*.inc,*.install,*.info,*.engine,*.profile,*.test set filetype=php
-  augroup END
-endif
 
 " tab completion
 function! CleverTab()
@@ -26,13 +19,20 @@ function! CleverTab()
 endfunction
 inoremap <Tab> <C-R>=CleverTab()<CR>
 
-syntax on
-
-" color scheme
+" color scheme and syntax highlighting
 color murphy
+syntax on
 
 " font settings
 set guifont=Consolas:h12
 
-" switch to 4-space tabs for Grant :)
-command HappyGrant set tabstop=4 softtabstop=4 expandtab
+" filetype detection
+if has("autocmd")
+  augroup phpfiles
+    autocmd BufRead,BufNewFile *.php,*.module,*.theme,*.inc,*.install,*.info,*.engine,*.profile,*.test set filetype=php
+  augroup END
+
+  augroup pythonfiles
+    au FileType python set tabstop=2 shiftwidth=2 softtabstop=2
+  augroup end
+endif
