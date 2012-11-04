@@ -28,11 +28,9 @@ set guifont=Consolas:h12
 
 " filetype detection
 if has("autocmd")
-  augroup phpfiles
-    autocmd BufRead,BufNewFile *.php,*.module,*.theme,*.inc,*.install,*.info,*.engine,*.profile,*.test set filetype=php
-  augroup END
+  au BufRead,BufNewFile *.php,*.module,*.theme,*.inc,*.install,*.info,*.engine,*.profile,*.test set filetype=php
 
-  augroup pythonfiles
-    au FileType python set tabstop=2 shiftwidth=2 softtabstop=2
-  augroup end
+  au FileType python set tabstop=2 shiftwidth=2 softtabstop=2
+
+  au BufRead,BufNewFile *.gitignore set filetype=conf
 endif
