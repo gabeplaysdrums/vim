@@ -20,12 +20,16 @@ color murphy
 syntax on
 
 " font settings
-set guifont=Consolas:h12
+if hostname() == "DACTYL2"
+  set guifont=Consolas:h11.5
+else
+  set guifont=Consolas:h12
+endif
 
 " tab settings
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 " indent settings
-set autoindent indentexpr=
+set autoindent nocindent nosmartindent indentexpr=
 
 " filetype detection
 if has("autocmd")
