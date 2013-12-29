@@ -22,6 +22,8 @@ syntax on
 " font settings
 if hostname() == "DACTYL2"
   set guifont=Consolas:h11.5
+elseif hostname() == "Gabriels-MacBook-Pro.local"
+  set guifont=Menlo:h14
 else
   set guifont=Consolas:h12
 endif
