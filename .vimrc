@@ -37,8 +37,6 @@ set autoindent nocindent nosmartindent indentexpr=
 if has("autocmd")
   au BufRead,BufNewFile *.php,*.module,*.theme,*.inc,*.install,*.info,*.engine,*.profile,*.test set filetype=php
 
-  au FileType python set tabstop=2 shiftwidth=2 softtabstop=2
-
   au BufRead,BufNewFile *.gitignore set filetype=conf
 
   au Filetype html set indentexpr= tabstop=2 shiftwidth=2 softtabstop=2
